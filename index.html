@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Survey with 29 r/Polls questions" />
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Survey with 29 r/Polls questions">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Survey with 29 r/Polls questions"
+    />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+    <meta property="og:title" content="Survey with 29 r/Polls questions" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://wandompewlin.github.io/surveyRpollsFlutter"
+    />
+    <meta
+      property="og:image"
+      content="https://wandompewlin.github.io/surveyRpollsFlutter/rpolls_preview.png"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>Survey with 29 r/Polls questions</title>
-  <link rel="manifest" href="manifest.json">
-      <style type="text/css">
-        body {
+    <title>Survey with 29 r/Polls questions</title>
+    <link rel="manifest" href="manifest.json" />
+    <style type="text/css">
+      body {
         background-color: #120723;
       }
       /* Status display
@@ -90,14 +103,13 @@
       #status-indeterminate > div:nth-child(8) {
         transform: rotate(337.5deg);
       }
-
     </style>
-</head>
-<body>
-  <div id="status">
+  </head>
+  <body>
+    <div id="status">
       <div
         id="status-indeterminate"
-        style="display: block;"
+        style="display: block"
         oncontextmenu="event.preventDefault();"
       >
         <div class="active"></div>
@@ -110,37 +122,34 @@
         <div></div>
       </div>
     </div>
-  <!-- This script installs service_worker.js to provide PWA functionality to
+    <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    var i = 0;
-    var statusIndeterminate = document.getElementById(
-          "status-indeterminate"
-        );
-    var progressInterval = setInterval(animateStatusIndeterminate,300);
+    <script>
+      var i = 0;
+      var statusIndeterminate = document.getElementById("status-indeterminate");
+      var progressInterval = setInterval(animateStatusIndeterminate, 300);
 
-    function animateStatusIndeterminate() {
-          if (document.getElementsByTagName("flt-glass-pane").length > 0){
-            clearInterval(progressInterval);
-          }
-          i = (i+1) % 8;
-          if (statusIndeterminate.children[i].className == "") {
-            Array.prototype.slice
-              .call(statusIndeterminate.children)
-              .forEach((child) => {
-                child.className = "";
-              });
-            statusIndeterminate.children[i].className = "active";
-          }
-
+      function animateStatusIndeterminate() {
+        if (document.getElementsByTagName("flt-glass-pane").length > 0) {
+          clearInterval(progressInterval);
         }
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js');
-      });
-    }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
-</body>
+        i = (i + 1) % 8;
+        if (statusIndeterminate.children[i].className == "") {
+          Array.prototype.slice
+            .call(statusIndeterminate.children)
+            .forEach((child) => {
+              child.className = "";
+            });
+          statusIndeterminate.children[i].className = "active";
+        }
+      }
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("flutter_service_worker.js");
+        });
+      }
+    </script>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
 </html>
