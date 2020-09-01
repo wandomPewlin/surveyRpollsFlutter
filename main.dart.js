@@ -40544,7 +40544,7 @@ $S:67}
 Q.ID.prototype={
 $1:function(a){var s,r=$.ct(),q=V.W2("GetStorage"),p=t.Cp,o=t.X
 S.W6(r,new F.wo(q,C.kF,P.aX(p),P.cy(o,p)),!0,t.sR)
-q=R.Z3(P.PG("wss://data.tegaqi.com:2087/letzScience",0,null)).e4(0,o)
+q=R.Z3(P.PG("ws://0.0.0.0:3000/letzScience",0,null)).e4(0,o)
 s=new D.yq(P.z2(o),P.cy(t.ih,t.uA))
 s.c=""
 S.W6(r,new O.zM(q,s,P.aX(p),P.cy(o,p)),!0,t.ss)
@@ -41596,7 +41596,7 @@ zE:function(a,b,c){if(!this.x){this.bW(0,"!OC:"+a+"|BC:"+b+"|FC:"+c)
 this.x=!0}}}
 O.PY.prototype={
 $1:function(a){var s=this.a
-s.c=R.Z3(P.PG("wss://data.tegaqi.com:2087/letzScience",0,null)).e4(0,t.X)
+s.c=R.Z3(P.PG("ws://0.0.0.0:3000/letzScience",0,null)).e4(0,t.X)
 s.yv()
 s.bW(0,"!RS:1")},
 $S:3}

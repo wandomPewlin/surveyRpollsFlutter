@@ -16,12 +16,125 @@
 
   <title>Survey with 29 r/Polls questions</title>
   <link rel="manifest" href="manifest.json">
+      <style type="text/css">
+        body {
+        background-color: #120723;
+      }
+      /* Status display
+		 * ============== */
+
+      #status {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* don't consume click events - make children visible explicitly */
+        visibility: hidden;
+      }
+
+      #status-indeterminate {
+        visibility: visible;
+        position: relative;
+      }
+
+      #status-indeterminate > div {
+        width: 15px;
+        height: 25px;
+        border-style: solid;
+        border-color: #2f2f2f;
+        border-width: 2px;
+        /*   border-width: 27px 6px 0 33px; */
+        box-shadow: inset 0 0 500px #2e2e2e;
+        /*   border-color: #2b2b2b transparent transparent transparent; */
+        transform-origin: center 50px;
+        border-radius: 50% 8% 64% 27%;
+        position: absolute;
+      }
+      #status-indeterminate > div.active {
+        border-style: none;
+        width: 20px;
+        height: 30px;
+        transform-origin: center 55px;
+        box-shadow: inset 0 0 5px #fff,
+          /* inner left magenta short */ inset 0 0 12px 1px #26f,
+          /* inner left magenta broad */ inset 0 0 100px #20aafe,
+          /* inner right cyan broad */ 0 0 20px #24f,
+          /* inner right cyan broad */ 0 0 5px #eef,
+          /* outer left magenta */ 0 0 80px 5px #2af; /* outer right cyan */
+      }
+      #status-indeterminate > div:nth-child(1) {
+        transform: rotate(22.5deg);
+      }
+      #status-indeterminate > div:nth-child(2) {
+        transform: rotate(67.5deg);
+      }
+      #status-indeterminate > div:nth-child(3) {
+        transform: rotate(112.5deg);
+      }
+      #status-indeterminate > div:nth-child(4) {
+        transform: rotate(157.5deg);
+      }
+      #status-indeterminate > div:nth-child(5) {
+        transform: rotate(202.5deg);
+      }
+      #status-indeterminate > div:nth-child(6) {
+        transform: rotate(247.5deg);
+      }
+      #status-indeterminate > div:nth-child(7) {
+        transform: rotate(292.5deg);
+      }
+      #status-indeterminate > div:nth-child(8) {
+        transform: rotate(337.5deg);
+      }
+
+    </style>
 </head>
 <body>
+  <div id="status">
+      <div
+        id="status-indeterminate"
+        style="display: block;"
+        oncontextmenu="event.preventDefault();"
+      >
+        <div class="active"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
+    var i = 0;
+    var statusIndeterminate = document.getElementById(
+          "status-indeterminate"
+        );
+    var progressInterval = setInterval(animateStatusIndeterminate,300);
+
+    function animateStatusIndeterminate() {
+          if (document.getElementsByTagName("flt-glass-pane").length > 0){
+            clearInterval(progressInterval);
+          }
+          i = (i+1) % 8;
+          if (statusIndeterminate.children[i].className == "") {
+            Array.prototype.slice
+              .call(statusIndeterminate.children)
+              .forEach((child) => {
+                child.className = "";
+              });
+            statusIndeterminate.children[i].className = "active";
+          }
+
+        }
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('flutter_service_worker.js');
