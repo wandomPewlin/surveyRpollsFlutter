@@ -40544,7 +40544,7 @@ $S:67}
 Q.ID.prototype={
 $1:function(a){var s,r=$.ct(),q=V.W2("GetStorage"),p=t.Cp,o=t.X
 S.W6(r,new F.wo(q,C.kF,P.aX(p),P.cy(o,p)),!0,t.sR)
-q=R.Z3(P.PG("wss://data.tegaqi.com:2087/letzScience",0,null)).e4(0,o)
+q=R.Z3(P.PG("ws://0.0.0.0:3000/letzScience",0,null)).e4(0,o)
 s=new D.yq(P.z2(o),P.cy(t.ih,t.uA))
 s.c=""
 S.W6(r,new O.zM(q,s,P.aX(p),P.cy(o,p)),!0,t.ss)
@@ -41393,8 +41393,8 @@ a0.b9(a.a)
 n=J.au(a.c,f)
 if(n==null){a=j.f.iy(2)
 j.r=a
-b.cP(0,f,a)}j.r=n
-if(n===0){a=$.ct().ch
+b.cP(0,f,a)}else j.r=n
+if(j.r===0){a=$.ct().ch
 a.e=C.qj
 a.cI(0)}a=b.b.c
 a0=$.aY
@@ -41403,7 +41403,7 @@ a0.b9(a.a)
 m=J.au(a.c,e)
 if(m==null){a=j.f.iy(2)
 j.x=a
-b.cP(0,e,a)}j.x=m
+b.cP(0,e,a)}else j.x=m
 a=b.b.c
 a0=$.aY
 if(a0==null)a0=$.aY=new G.c8()
@@ -41411,7 +41411,7 @@ a0.b9(a.a)
 l=J.au(a.c,d)
 if(l==null){a=j.f.iy(2)
 j.y=a
-b.cP(0,d,a)}j.y=l
+b.cP(0,d,a)}else j.y=l
 a=b.b.c
 a0=$.aY
 if(a0==null)a0=$.aY=new G.c8()
@@ -41419,7 +41419,7 @@ a0.b9(a.a)
 k=J.au(a.c,c)
 if(k==null){a=j.f.iy(2)
 j.z=a
-b.cP(0,c,a)}j.z=k}}
+b.cP(0,c,a)}else j.z=k}}
 Q.JF.prototype={}
 T.fn.prototype={
 iA:function(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=this,d="questionIndices",c="optionsIndices"
@@ -41563,7 +41563,8 @@ O.zM.prototype={
 Nv:function(a,b){if(b==S.dR($.ct(),t.sR).d)P.W_(P.d2(0,1000,0),t.z).aM(0,new O.PY(this),t.P)
 else P.dl("This is callback from older session "+H.a(b)+". Aborting")},
 yv:function(){var s=S.dR($.ct(),t.sR),r="testSurvey,"+H.a(s.c)+","+H.a(s.d)+","+H.a(s.r)+"|"+H.a(s.x)+"|"+H.a(s.y)+"|"+H.a(s.z)
-this.c.b.u(0,r)},
+this.c.b.u(0,r)
+this.c.b.u(0,"!FA:1")},
 iA:function(){var s,r,q=this
 q.yv()
 s=P.d2(0,0,95)
@@ -41595,7 +41596,7 @@ zE:function(a,b,c){if(!this.x){this.bW(0,"!OC:"+a+"|BC:"+b+"|FC:"+c)
 this.x=!0}}}
 O.PY.prototype={
 $1:function(a){var s=this.a
-s.c=R.Z3(P.PG("wss://data.tegaqi.com:2087/letzScience",0,null)).e4(0,t.X)
+s.c=R.Z3(P.PG("ws://0.0.0.0:3000/letzScience",0,null)).e4(0,t.X)
 s.yv()
 s.bW(0,"!RS:1")},
 $S:3}
@@ -41804,7 +41805,7 @@ n=T.bV(T.jh(H.b([new U.hg("Required Time",o,q),new U.fe("~ 5 minutes",n,q),new U
 o=K.ag(b,!1).I
 s=K.ag(b,!1).I
 r=K.ag(b,!1).I
-return M.WD(T.jf(new T.kL(0.5625,M.fK(q,new T.da(C.kN,T.jh(H.b([l,k,n,T.bV(N.vr(L.WJ("Start",q,q,q,q,q,q,q,B.el(K.ag(b,!1).I.f,45),q,q,q),o.Q,q,r.e,s.b,new U.KE(),C.kH),1)],m),C.ap,C.cC),q),q,q,new S.cC(q,q,p,q,q,q,C.O),q,C.im,q,q),q),q,q))}}
+return M.WD(T.jf(new T.kL(0.5625,M.fK(q,new T.da(C.kN,T.jh(H.b([l,k,n,T.bV(N.vr(L.WJ("Start",q,q,q,q,q,q,q,B.el(K.ag(b,!1).I.f,35),q,q,q),o.Q,q,r.e,s.b,new U.KE(),C.kH),1)],m),C.ap,C.cC),q),q,q,new S.cC(q,q,p,q,q,q,C.O),q,C.im,q,q),q),q,q))}}
 U.KE.prototype={
 $0:function(){var s=t.qh,r=t.F
 Y.YY($.ct(),new Z.xC(new M.j3(P.y(s,r),1/0),new M.j3(P.y(s,r),1/0),P.h_(t.vz),null),t.z)},
