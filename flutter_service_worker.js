@@ -33,7 +33,7 @@ self.addEventListener("install", (event) => {
     caches.open(TEMP).then((cache) => {
       // Provide a 'reload' param to ensure the latest version is downloaded.
       return cache.addAll(
-        CORE.map((value) => new Request(value, { cache: "reload" }))
+        CORE.map((value) => new Request(value, { cache: "default" }))
       );
     })
   );
